@@ -12,8 +12,7 @@
 |out|output, executables, and game files |
 
 😀 Hello, everyone.  😀  
-This repository is a cmake project about physical engine, physical simulation, and physical rendering based on **directx9, directx11 and unity3d**.
-***Please understand that my skills regarding cmake are poor. :D***  
+This repository is a CMake DirectX11 tutorial project.
   
 I am a student who is interested in  
 **game programming** and **graphics technology**.  
