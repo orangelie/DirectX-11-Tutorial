@@ -65,7 +65,7 @@ namespace orangelie {
 			swapChainDesc.BufferDesc.Scaling = DXGI_MODE_SCALING_UNSPECIFIED;
 			swapChainDesc.BufferDesc.ScanlineOrdering = DXGI_MODE_SCANLINE_ORDER_UNSPECIFIED;
 			swapChainDesc.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
-			swapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH;
+			swapChainDesc.Flags = 0;
 			swapChainDesc.OutputWindow = m_hWnd;
 			swapChainDesc.SampleDesc.Count = 1;
 			swapChainDesc.SampleDesc.Quality = 0;
@@ -207,10 +207,45 @@ namespace orangelie {
 		}
 
 		void ZekrosEngine::OnResize() {
+			assert(m_SwapChain);
+
+			if(m_Rtv != nullptr) m_Rtv->Release();
+			if (m_DsvBuffer != nullptr) m_DsvBuffer->Release();
+			if (m_DepthStencilView != nullptr) m_DepthStencilView->Release();
+
 			HR(m_SwapChain->ResizeBuffers(1, m_ClientWidth, m_ClientHeight,
-				DXGI_FORMAT_R8G8B8A8_UNORM, DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH));
+				DXGI_FORMAT_R8G8B8A8_UNORM, 0));
 
+			ComPtr<ID3D11Texture2D> renderTargetPtr = nullptr;
+			HR(m_SwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), reinterpret_cast<void**>(renderTargetPtr.GetAddressOf())));
+			HR(m_Device->CreateRenderTargetView(renderTargetPtr.Get(), nullptr, m_Rtv.GetAddressOf()));
 
+			D3D11_TEXTURE2D_DESC depthStencilDesc = {};
+			depthStencilDesc.ArraySize = 1;
+			depthStencilDesc.BindFlags = D3D11_BIND_DEPTH_STENCIL;
+			depthStencilDesc.CPUAccessFlags = 0;
+			depthStencilDesc.Height = m_ClientHeight;
+			depthStencilDesc.Width = m_ClientWidth;
+			depthStencilDesc.MipLevels = 1;
+			depthStencilDesc.MiscFlags = 0;
+			depthStencilDesc.Usage = D3D11_USAGE_DEFAULT;
+			depthStencilDesc.SampleDesc.Count = 1;
+			depthStencilDesc.SampleDesc.Quality = 0;
+			depthStencilDesc.Format = DXGI_FORMAT_D24_UNORM_S8_UINT;
+
+			HR(m_Device->CreateTexture2D(&depthStencilDesc, nullptr, m_DsvBuffer.GetAddressOf()));
+			HR(m_Device->CreateDepthStencilView(m_DsvBuffer.Get(), nullptr, m_DepthStencilView.GetAddressOf()));
+
+			m_ImmediateContext->OMSetRenderTargets(1, m_Rtv.GetAddressOf(), m_DepthStencilView.Get());
+
+			m_Viewport.Height = (float)m_ClientHeight;
+			m_Viewport.Width = (float)m_ClientWidth;
+			m_Viewport.MinDepth = 0.0f;
+			m_Viewport.MaxDepth = 1.0f;
+			m_Viewport.TopLeftX = 0.0f;
+			m_Viewport.TopLeftY = 0.0f;
+
+			m_ImmediateContext->RSSetViewports(1, &m_Viewport);
 		}
 	}
 }

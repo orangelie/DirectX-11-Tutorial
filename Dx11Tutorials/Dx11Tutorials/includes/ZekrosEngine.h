@@ -57,6 +57,14 @@ namespace orangelie {
 			ComPtr<ID3D11Device> m_Device = nullptr;
 			ComPtr<ID3D11DeviceContext> m_ImmediateContext = nullptr;
 
+
+			// OnResize
+			ComPtr<IDXGISwapChain> m_SwapChain = nullptr;
+			D3D11_VIEWPORT m_Viewport = {};
+			ComPtr<ID3D11RenderTargetView> m_Rtv = nullptr;
+			ComPtr<ID3D11Texture2D> m_DsvBuffer = nullptr;
+			ComPtr<ID3D11DepthStencilView> m_DepthStencilView = nullptr;
+
 		private:
 			std::unique_ptr<orangelie::Windows::Win32> m_Win32 = nullptr;
 			orangelie::Time::GameTimer m_GameTimer;
@@ -71,7 +79,6 @@ namespace orangelie {
 			ComPtr<IDXGIFactory> m_Factory = nullptr;
 			ComPtr<IDXGIAdapter> m_Adapter = nullptr;
 			ComPtr<IDXGIDevice> m_DxgiDevice = nullptr;
-			ComPtr<IDXGISwapChain> m_SwapChain = nullptr;
 		};
 	}
 }
