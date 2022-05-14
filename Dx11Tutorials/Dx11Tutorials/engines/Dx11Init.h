@@ -2,13 +2,6 @@
 
 class Dx11Init : public orangelie::Engine::ZekrosEngine {
 protected:
-	// Screen Resize
-	virtual void OnResize() {
-		ZekrosEngine::OnResize();
-
-
-	}
-
 	// Virtuals
 	virtual void init() {
 
@@ -39,6 +32,10 @@ protected:
 			0);
 
 		m_SwapChain->Present(0, 0);
+	}
+
+	virtual void resize(float dt) {
+
 	}
 
 	// Mouse Controller

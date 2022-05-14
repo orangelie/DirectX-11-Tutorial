@@ -1,11 +1,17 @@
-﻿cmake_minimum_required (VERSION 3.8)
+﻿cmake_minimum_required (VERSION 3.8) # not mutable
 
-set(ZekrosEngine_Includes "../includes/ZekrosEngine.cpp" "../includes/ZekrosEngine.h")
-set(Windows_Includes "../includes/Windows.cpp" "../includes/Windows.h")
-set(GameTimer_Includes "../includes/GameTimer.cpp" "../includes/GameTimer.h")
+set(ZekrosEngine_Includes "../includes/ZekrosEngine.cpp" "../includes/ZekrosEngine.h") # not mutable
+set(Windows_Includes "../includes/Windows.cpp" "../includes/Windows.h") # not mutable
+set(GameTimer_Includes "../includes/GameTimer.cpp" "../includes/GameTimer.h") # not mutable
+
 set(Dx11Init_Includes ${ZekrosEngine_Includes} ${Windows_Includes} ${GameTimer_Includes})
+set(Dx11Draw_Includes ${ZekrosEngine_Includes} ${Windows_Includes} ${GameTimer_Includes})
+
+add_subdirectory ("engines") # not mutable
+
 
 project("Dx11Init")
-add_subdirectory ("engines")
-
 target_include_directories(Dx11Init PUBLIC "${CMAKE_SOURCE_DIR}/DxInclude")
+
+project("Dx11Draw")
+target_include_directories(Dx11Draw PUBLIC "${CMAKE_SOURCE_DIR}/DxInclude")

@@ -13,16 +13,22 @@
 
 #pragma once
 
+#include <iostream>
+#include <string>
+#include <vector>
+#include <unordered_map>
+
 #include <d3dcommon.h>
 #include <D3Dcompiler.h>
 #include <DirectXMath.h>
 #include <DirectXCollision.h>
+#include <DirectXColors.h>
 
 //#include <d3d10_1.h>
 //#include <D3DX10.h>
 //#include <d3d11.h>
-//#include <D3DX11.h>
 #include <d3dx11effect.h>
+#include <D3DX11.h>
 
 #if not defined(WIN32_LEAN_AND_MEAN)
 #define WIN32_LEAN_AND_MEAN
@@ -33,10 +39,7 @@
 #include <wrl.h>
 
 using namespace Microsoft::WRL;
-
-
-#include <iostream>
-#include <string>
+using namespace DirectX;
 
 
 #define THROW(e) { \
@@ -51,6 +54,9 @@ using namespace Microsoft::WRL;
 	} \
 } \
 
+#define NULLPTR_CHECK(e) { \
+	if(e == nullptr) MessageBoxA(0, std::to_string(__LINE__).c_str(), "Checked !", MB_OK); \
+} \
 
 namespace orangelie {
 	namespace CppStdUtil {

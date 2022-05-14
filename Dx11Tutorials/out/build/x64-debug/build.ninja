@@ -105,7 +105,7 @@ build Dx11Tutorials\rebuild_cache: phony Dx11Tutorials\CMakeFiles\rebuild_cache.
 
 build cmake_object_order_depends_target_Dx11Init: phony || Dx11Tutorials\engines\CMakeFiles\Dx11Init.dir
 
-build Dx11Tutorials\engines\CMakeFiles\Dx11Init.dir\main.cpp.obj: CXX_COMPILER__Dx11Init_Debug C$:\Users\parksangwo\Desktop\Github\DirectX-11-Tutorial\Dx11Tutorials\Dx11Tutorials\engines\main.cpp || cmake_object_order_depends_target_Dx11Init
+build Dx11Tutorials\engines\CMakeFiles\Dx11Init.dir\main_Dx11Init.cpp.obj: CXX_COMPILER__Dx11Init_Debug C$:\Users\parksangwo\Desktop\Github\DirectX-11-Tutorial\Dx11Tutorials\Dx11Tutorials\engines\main_Dx11Init.cpp || cmake_object_order_depends_target_Dx11Init
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   INCLUDES = -IC:\Users\parksangwo\Desktop\Github\DirectX-11-Tutorial\Dx11Tutorials\DxInclude
   OBJECT_DIR = Dx11Tutorials\engines\CMakeFiles\Dx11Init.dir
@@ -145,7 +145,7 @@ build Dx11Tutorials\engines\CMakeFiles\Dx11Init.dir\__\includes\GameTimer.cpp.ob
 #############################################
 # Link the executable Dx11Tutorials\engines\Dx11Init.exe
 
-build Dx11Tutorials\engines\Dx11Init.exe: CXX_EXECUTABLE_LINKER__Dx11Init_Debug Dx11Tutorials\engines\CMakeFiles\Dx11Init.dir\main.cpp.obj Dx11Tutorials\engines\CMakeFiles\Dx11Init.dir\__\includes\ZekrosEngine.cpp.obj Dx11Tutorials\engines\CMakeFiles\Dx11Init.dir\__\includes\Windows.cpp.obj Dx11Tutorials\engines\CMakeFiles\Dx11Init.dir\__\includes\GameTimer.cpp.obj | ..\..\..\Lib\x64\d3dx11.lib ..\..\..\Lib\x64\d3d11.lib ..\..\..\Lib\x64\d3d10.lib ..\..\..\Lib\x64\d3dx10.lib ..\..\..\Lib\x64\dxgi.lib ..\..\..\Lib\x64\dxguid.lib
+build Dx11Tutorials\engines\Dx11Init.exe: CXX_EXECUTABLE_LINKER__Dx11Init_Debug Dx11Tutorials\engines\CMakeFiles\Dx11Init.dir\main_Dx11Init.cpp.obj Dx11Tutorials\engines\CMakeFiles\Dx11Init.dir\__\includes\ZekrosEngine.cpp.obj Dx11Tutorials\engines\CMakeFiles\Dx11Init.dir\__\includes\Windows.cpp.obj Dx11Tutorials\engines\CMakeFiles\Dx11Init.dir\__\includes\GameTimer.cpp.obj | ..\..\..\Lib\x64\d3dx11.lib ..\..\..\Lib\x64\d3d11.lib ..\..\..\Lib\x64\d3d10.lib ..\..\..\Lib\x64\d3dx10.lib ..\..\..\Lib\x64\dxgi.lib ..\..\..\Lib\x64\dxguid.lib
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = ..\..\..\Lib\x64\d3dx11.lib  ..\..\..\Lib\x64\d3d11.lib  ..\..\..\Lib\x64\d3d10.lib  ..\..\..\Lib\x64\d3dx10.lib  ..\..\..\Lib\x64\dxgi.lib  ..\..\..\Lib\x64\dxguid.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
@@ -156,6 +156,67 @@ build Dx11Tutorials\engines\Dx11Init.exe: CXX_EXECUTABLE_LINKER__Dx11Init_Debug 
   TARGET_FILE = Dx11Tutorials\engines\Dx11Init.exe
   TARGET_IMPLIB = Dx11Tutorials\engines\Dx11Init.lib
   TARGET_PDB = Dx11Tutorials\engines\Dx11Init.pdb
+
+# =============================================================================
+# Object build statements for EXECUTABLE target Dx11Draw
+
+
+#############################################
+# Order-only phony target for Dx11Draw
+
+build cmake_object_order_depends_target_Dx11Draw: phony || Dx11Tutorials\engines\CMakeFiles\Dx11Draw.dir
+
+build Dx11Tutorials\engines\CMakeFiles\Dx11Draw.dir\main_Dx11Draw.cpp.obj: CXX_COMPILER__Dx11Draw_Debug C$:\Users\parksangwo\Desktop\Github\DirectX-11-Tutorial\Dx11Tutorials\Dx11Tutorials\engines\main_Dx11Draw.cpp || cmake_object_order_depends_target_Dx11Draw
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -IC:\Users\parksangwo\Desktop\Github\DirectX-11-Tutorial\Dx11Tutorials\DxInclude
+  OBJECT_DIR = Dx11Tutorials\engines\CMakeFiles\Dx11Draw.dir
+  OBJECT_FILE_DIR = Dx11Tutorials\engines\CMakeFiles\Dx11Draw.dir
+  TARGET_COMPILE_PDB = Dx11Tutorials\engines\CMakeFiles\Dx11Draw.dir\
+  TARGET_PDB = Dx11Tutorials\engines\Dx11Draw.pdb
+
+build Dx11Tutorials\engines\CMakeFiles\Dx11Draw.dir\__\includes\ZekrosEngine.cpp.obj: CXX_COMPILER__Dx11Draw_Debug C$:\Users\parksangwo\Desktop\Github\DirectX-11-Tutorial\Dx11Tutorials\Dx11Tutorials\includes\ZekrosEngine.cpp || cmake_object_order_depends_target_Dx11Draw
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -IC:\Users\parksangwo\Desktop\Github\DirectX-11-Tutorial\Dx11Tutorials\DxInclude
+  OBJECT_DIR = Dx11Tutorials\engines\CMakeFiles\Dx11Draw.dir
+  OBJECT_FILE_DIR = Dx11Tutorials\engines\CMakeFiles\Dx11Draw.dir\__\includes
+  TARGET_COMPILE_PDB = Dx11Tutorials\engines\CMakeFiles\Dx11Draw.dir\
+  TARGET_PDB = Dx11Tutorials\engines\Dx11Draw.pdb
+
+build Dx11Tutorials\engines\CMakeFiles\Dx11Draw.dir\__\includes\Windows.cpp.obj: CXX_COMPILER__Dx11Draw_Debug C$:\Users\parksangwo\Desktop\Github\DirectX-11-Tutorial\Dx11Tutorials\Dx11Tutorials\includes\Windows.cpp || cmake_object_order_depends_target_Dx11Draw
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -IC:\Users\parksangwo\Desktop\Github\DirectX-11-Tutorial\Dx11Tutorials\DxInclude
+  OBJECT_DIR = Dx11Tutorials\engines\CMakeFiles\Dx11Draw.dir
+  OBJECT_FILE_DIR = Dx11Tutorials\engines\CMakeFiles\Dx11Draw.dir\__\includes
+  TARGET_COMPILE_PDB = Dx11Tutorials\engines\CMakeFiles\Dx11Draw.dir\
+  TARGET_PDB = Dx11Tutorials\engines\Dx11Draw.pdb
+
+build Dx11Tutorials\engines\CMakeFiles\Dx11Draw.dir\__\includes\GameTimer.cpp.obj: CXX_COMPILER__Dx11Draw_Debug C$:\Users\parksangwo\Desktop\Github\DirectX-11-Tutorial\Dx11Tutorials\Dx11Tutorials\includes\GameTimer.cpp || cmake_object_order_depends_target_Dx11Draw
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -IC:\Users\parksangwo\Desktop\Github\DirectX-11-Tutorial\Dx11Tutorials\DxInclude
+  OBJECT_DIR = Dx11Tutorials\engines\CMakeFiles\Dx11Draw.dir
+  OBJECT_FILE_DIR = Dx11Tutorials\engines\CMakeFiles\Dx11Draw.dir\__\includes
+  TARGET_COMPILE_PDB = Dx11Tutorials\engines\CMakeFiles\Dx11Draw.dir\
+  TARGET_PDB = Dx11Tutorials\engines\Dx11Draw.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target Dx11Draw
+
+
+#############################################
+# Link the executable Dx11Tutorials\engines\Dx11Draw.exe
+
+build Dx11Tutorials\engines\Dx11Draw.exe: CXX_EXECUTABLE_LINKER__Dx11Draw_Debug Dx11Tutorials\engines\CMakeFiles\Dx11Draw.dir\main_Dx11Draw.cpp.obj Dx11Tutorials\engines\CMakeFiles\Dx11Draw.dir\__\includes\ZekrosEngine.cpp.obj Dx11Tutorials\engines\CMakeFiles\Dx11Draw.dir\__\includes\Windows.cpp.obj Dx11Tutorials\engines\CMakeFiles\Dx11Draw.dir\__\includes\GameTimer.cpp.obj | ..\..\..\Lib\x64\d3dx11.lib ..\..\..\Lib\x64\d3d11.lib ..\..\..\Lib\x64\d3d10.lib ..\..\..\Lib\x64\d3dx10.lib ..\..\..\Lib\x64\dxgi.lib ..\..\..\Lib\x64\dxguid.lib ..\..\..\Lib\x64\Effects11.lib
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
+  LINK_LIBRARIES = ..\..\..\Lib\x64\d3dx11.lib  ..\..\..\Lib\x64\d3d11.lib  ..\..\..\Lib\x64\d3d10.lib  ..\..\..\Lib\x64\d3dx10.lib  ..\..\..\Lib\x64\dxgi.lib  ..\..\..\Lib\x64\dxguid.lib  ..\..\..\Lib\x64\Effects11.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  OBJECT_DIR = Dx11Tutorials\engines\CMakeFiles\Dx11Draw.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = Dx11Tutorials\engines\CMakeFiles\Dx11Draw.dir\
+  TARGET_FILE = Dx11Tutorials\engines\Dx11Draw.exe
+  TARGET_IMPLIB = Dx11Tutorials\engines\Dx11Draw.lib
+  TARGET_PDB = Dx11Tutorials\engines\Dx11Draw.pdb
 
 
 #############################################
@@ -183,6 +244,10 @@ build Dx11Tutorials\engines\rebuild_cache: phony Dx11Tutorials\engines\CMakeFile
 # =============================================================================
 # Target aliases.
 
+build Dx11Draw: phony Dx11Tutorials\engines\Dx11Draw.exe
+
+build Dx11Draw.exe: phony Dx11Tutorials\engines\Dx11Draw.exe
+
 build Dx11Init: phony Dx11Tutorials\engines\Dx11Init.exe
 
 build Dx11Init.exe: phony Dx11Tutorials\engines\Dx11Init.exe
@@ -209,7 +274,7 @@ build Dx11Tutorials\all: phony Dx11Tutorials\engines\all
 #############################################
 # Folder: C:/Users/parksangwo/Desktop/Github/DirectX-11-Tutorial/Dx11Tutorials/out/build/x64-debug/Dx11Tutorials/engines
 
-build Dx11Tutorials\engines\all: phony Dx11Tutorials\engines\Dx11Init.exe
+build Dx11Tutorials\engines\all: phony Dx11Tutorials\engines\Dx11Init.exe Dx11Tutorials\engines\Dx11Draw.exe
 
 # =============================================================================
 # Built-in targets

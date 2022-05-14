@@ -246,6 +246,8 @@ namespace orangelie {
 			m_Viewport.TopLeftY = 0.0f;
 
 			m_ImmediateContext->RSSetViewports(1, &m_Viewport);
+
+			resize(m_GameTimer.DeltaTime());
 		}
 	}
 }

@@ -31,14 +31,15 @@ namespace orangelie {
 			static ZekrosEngine* gZekrosEngine;
 			virtual LRESULT MessageHandler(HWND hWnd, UINT uMessage, WPARAM wParam, LPARAM lParam);
 
-		protected:
-			// Screen Resize
-			virtual void OnResize();
+		private:
 
+		protected:
+			void OnResize();
 			// Virtuals
 			virtual void init() = 0;
 			virtual void update(float dt) = 0;
 			virtual void draw(float dt) = 0;
+			virtual void resize(float dt) = 0;
 
 			// Mouse Controller
 			virtual void MouseDown(WPARAM btnState, int x, int y) = 0;

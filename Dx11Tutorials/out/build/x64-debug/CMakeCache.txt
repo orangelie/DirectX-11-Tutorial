@@ -193,6 +193,15 @@ CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
+Dx11Draw_BINARY_DIR:STATIC=C:/Users/parksangwo/Desktop/Github/DirectX-11-Tutorial/Dx11Tutorials/out/build/x64-debug/Dx11Tutorials
+
+//Value Computed by CMake
+Dx11Draw_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+Dx11Draw_SOURCE_DIR:STATIC=C:/Users/parksangwo/Desktop/Github/DirectX-11-Tutorial/Dx11Tutorials/Dx11Tutorials
+
+//Value Computed by CMake
 Dx11Init_BINARY_DIR:STATIC=C:/Users/parksangwo/Desktop/Github/DirectX-11-Tutorial/Dx11Tutorials/out/build/x64-debug/Dx11Tutorials
 
 //Value Computed by CMake
@@ -200,6 +209,9 @@ Dx11Init_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 Dx11Init_SOURCE_DIR:STATIC=C:/Users/parksangwo/Desktop/Github/DirectX-11-Tutorial/Dx11Tutorials/Dx11Tutorials
+
+//fx compiler
+FXC:FILEPATH=C:/Program Files (x86)/Windows Kits/10/bin/10.0.22000.0/x64/fxc.exe
 
 //Value Computed by CMake
 Project_BINARY_DIR:STATIC=C:/Users/parksangwo/Desktop/Github/DirectX-11-Tutorial/Dx11Tutorials/out/build/x64-debug
