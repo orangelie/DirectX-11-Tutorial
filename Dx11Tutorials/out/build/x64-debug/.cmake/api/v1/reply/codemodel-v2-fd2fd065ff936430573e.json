@@ -1,0 +1,123 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "Dx11Tutorials",
+					"childIndexes" : 
+					[
+						2
+					],
+					"jsonFile" : "directory-Dx11Tutorials-Debug-58990ffe633b9f99d9f3.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "Dx11Tutorials"
+				},
+				{
+					"build" : "Dx11Tutorials/engines",
+					"jsonFile" : "directory-Dx11Tutorials.engines-Debug-8142f797601384961852.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "Dx11Tutorials/engines",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Project"
+				},
+				{
+					"childIndexes" : 
+					[
+						2
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "Dx11Draw",
+					"parentIndex" : 0
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "Project",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "Dx11Draw::@78dd83e643159a3ec5eb",
+					"jsonFile" : "target-Dx11Draw-Debug-a0aeb3d79926cffa9527.json",
+					"name" : "Dx11Draw",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "Dx11Init::@78dd83e643159a3ec5eb",
+					"jsonFile" : "target-Dx11Init-Debug-f34afbbf82e163ad407b.json",
+					"name" : "Dx11Init",
+					"projectIndex" : 2
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/parksangwo/Desktop/Github/DirectX-11-Tutorial/Dx11Tutorials/out/build/x64-debug",
+		"source" : "C:/Users/parksangwo/Desktop/Github/DirectX-11-Tutorial/Dx11Tutorials"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

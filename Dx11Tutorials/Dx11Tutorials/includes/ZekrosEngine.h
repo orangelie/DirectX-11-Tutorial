@@ -15,6 +15,7 @@
 
 #include "Windows.h"
 #include "GameTimer.h"
+#include "DxUtils.h"
 
 namespace orangelie {
 	namespace Engine {
