@@ -11,3 +11,13 @@
 1936	2317	6742571388172261	Dx11Tutorials/engines/Dx11Draw.exe	5e7158b5c6266dda
 1	1469	6742571706158139	Dx11Tutorials/engines/CMakeFiles/Dx11Draw.dir/main_Dx11Draw.cpp.obj	68171cfd1714d472
 1475	1700	6742571708218236	Dx11Tutorials/engines/Dx11Draw.exe	5e7158b5c6266dda
+4	1704	6743206278612787	Dx11Tutorials/engines/CMakeFiles/Dx11Draw.dir/__/includes/ZekrosEngine.cpp.obj	9436f012b1e0ee5a
+1	1750	6743206278768987	Dx11Tutorials/engines/CMakeFiles/Dx11Init.dir/__/includes/ZekrosEngine.cpp.obj	be842742cdf950d9
+1752	2164	6743206282206143	Dx11Tutorials/engines/Dx11Init.exe	c91f81a0de11bc1a
+1745	2192	6743206283299782	Dx11Tutorials/engines/Dx11Draw.exe	5e7158b5c6266dda
+4	1491	6743207041880647	Dx11Tutorials/engines/CMakeFiles/Dx11Init.dir/__/includes/ZekrosEngine.cpp.obj	be842742cdf950d9
+7	1495	6743207041880647	Dx11Tutorials/engines/CMakeFiles/Dx11Draw.dir/__/includes/ZekrosEngine.cpp.obj	9436f012b1e0ee5a
+1	1500	6743207041880647	Dx11Tutorials/engines/CMakeFiles/Dx11Init.dir/main_Dx11Init.cpp.obj	b1c55c98fab365d4
+10	1512	6743207042036881	Dx11Tutorials/engines/CMakeFiles/Dx11Draw.dir/main_Dx11Draw.cpp.obj	68171cfd1714d472
+1502	1704	6743207043599226	Dx11Tutorials/engines/Dx11Init.exe	c91f81a0de11bc1a
+1515	1775	6743207044380408	Dx11Tutorials/engines/Dx11Draw.exe	5e7158b5c6266dda

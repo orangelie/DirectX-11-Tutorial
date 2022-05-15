@@ -77,7 +77,7 @@ namespace orangelie {
 			bool m_IsResizing = false;
 
 			UINT m_4xMsaaMSQuality = 0;
-
+			
 			ComPtr<IDXGIFactory> m_Factory = nullptr;
 			ComPtr<IDXGIAdapter> m_Adapter = nullptr;
 			ComPtr<IDXGIDevice> m_DxgiDevice = nullptr;
