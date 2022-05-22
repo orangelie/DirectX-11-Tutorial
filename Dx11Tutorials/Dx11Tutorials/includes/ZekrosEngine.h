@@ -16,9 +16,12 @@
 #include "Windows.h"
 #include "GameTimer.h"
 #include "DxUtils.h"
+#include "GeometyGenerator.h"
 
 namespace orangelie {
+
 	namespace Engine {
+
 		class ZekrosEngine {
 		public:
 			ZekrosEngine();

@@ -135,9 +135,9 @@ private:
 		HR(m_Tech->GetPassByIndex(0)->GetDesc(&passDesc));
 		HR(m_Device->CreateInputLayout(
 			m_InputElements.data(),
-			m_InputElements.size(),
+			(UINT)m_InputElements.size(),
 			passDesc.pIAInputSignature,
-			passDesc.IAInputSignatureSize,
+			(UINT)passDesc.IAInputSignatureSize,
 			&m_InputLayout));
 	}
 
@@ -192,7 +192,7 @@ protected:
 		D3DX11_TECHNIQUE_DESC techniqueDesc = {};
 		m_Tech->GetDesc(&techniqueDesc);
 
-		for (int i = 0; i < techniqueDesc.Passes; i++) {
+		for (uint32_t i = 0; i < techniqueDesc.Passes; i++) {
 			m_Tech->GetPassByIndex(i)->Apply(0, m_ImmediateContext.Get());
 			m_ImmediateContext->DrawIndexed(36, 0, 0);
 		}
