@@ -234,6 +234,75 @@ build Dx11Tutorials\engines\Dx11Draw.exe: CXX_EXECUTABLE_LINKER__Dx11Draw_Debug 
   TARGET_IMPLIB = Dx11Tutorials\engines\Dx11Draw.lib
   TARGET_PDB = Dx11Tutorials\engines\Dx11Draw.pdb
 
+# =============================================================================
+# Object build statements for EXECUTABLE target Dx11Geo1
+
+
+#############################################
+# Order-only phony target for Dx11Geo1
+
+build cmake_object_order_depends_target_Dx11Geo1: phony || Dx11Tutorials\engines\CMakeFiles\Dx11Geo1.dir
+
+build Dx11Tutorials\engines\CMakeFiles\Dx11Geo1.dir\main_Dx11Geo1.cpp.obj: CXX_COMPILER__Dx11Geo1_Debug C$:\Users\parksangwo\Desktop\Github\DirectX-11-Tutorial\Dx11Tutorials\Dx11Tutorials\engines\main_Dx11Geo1.cpp || cmake_object_order_depends_target_Dx11Geo1
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -IC:\Users\parksangwo\Desktop\Github\DirectX-11-Tutorial\Dx11Tutorials\DxInclude
+  OBJECT_DIR = Dx11Tutorials\engines\CMakeFiles\Dx11Geo1.dir
+  OBJECT_FILE_DIR = Dx11Tutorials\engines\CMakeFiles\Dx11Geo1.dir
+  TARGET_COMPILE_PDB = Dx11Tutorials\engines\CMakeFiles\Dx11Geo1.dir\
+  TARGET_PDB = Dx11Tutorials\engines\Dx11Geo1.pdb
+
+build Dx11Tutorials\engines\CMakeFiles\Dx11Geo1.dir\__\includes\ZekrosEngine.cpp.obj: CXX_COMPILER__Dx11Geo1_Debug C$:\Users\parksangwo\Desktop\Github\DirectX-11-Tutorial\Dx11Tutorials\Dx11Tutorials\includes\ZekrosEngine.cpp || cmake_object_order_depends_target_Dx11Geo1
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -IC:\Users\parksangwo\Desktop\Github\DirectX-11-Tutorial\Dx11Tutorials\DxInclude
+  OBJECT_DIR = Dx11Tutorials\engines\CMakeFiles\Dx11Geo1.dir
+  OBJECT_FILE_DIR = Dx11Tutorials\engines\CMakeFiles\Dx11Geo1.dir\__\includes
+  TARGET_COMPILE_PDB = Dx11Tutorials\engines\CMakeFiles\Dx11Geo1.dir\
+  TARGET_PDB = Dx11Tutorials\engines\Dx11Geo1.pdb
+
+build Dx11Tutorials\engines\CMakeFiles\Dx11Geo1.dir\__\includes\Windows.cpp.obj: CXX_COMPILER__Dx11Geo1_Debug C$:\Users\parksangwo\Desktop\Github\DirectX-11-Tutorial\Dx11Tutorials\Dx11Tutorials\includes\Windows.cpp || cmake_object_order_depends_target_Dx11Geo1
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -IC:\Users\parksangwo\Desktop\Github\DirectX-11-Tutorial\Dx11Tutorials\DxInclude
+  OBJECT_DIR = Dx11Tutorials\engines\CMakeFiles\Dx11Geo1.dir
+  OBJECT_FILE_DIR = Dx11Tutorials\engines\CMakeFiles\Dx11Geo1.dir\__\includes
+  TARGET_COMPILE_PDB = Dx11Tutorials\engines\CMakeFiles\Dx11Geo1.dir\
+  TARGET_PDB = Dx11Tutorials\engines\Dx11Geo1.pdb
+
+build Dx11Tutorials\engines\CMakeFiles\Dx11Geo1.dir\__\includes\GameTimer.cpp.obj: CXX_COMPILER__Dx11Geo1_Debug C$:\Users\parksangwo\Desktop\Github\DirectX-11-Tutorial\Dx11Tutorials\Dx11Tutorials\includes\GameTimer.cpp || cmake_object_order_depends_target_Dx11Geo1
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -IC:\Users\parksangwo\Desktop\Github\DirectX-11-Tutorial\Dx11Tutorials\DxInclude
+  OBJECT_DIR = Dx11Tutorials\engines\CMakeFiles\Dx11Geo1.dir
+  OBJECT_FILE_DIR = Dx11Tutorials\engines\CMakeFiles\Dx11Geo1.dir\__\includes
+  TARGET_COMPILE_PDB = Dx11Tutorials\engines\CMakeFiles\Dx11Geo1.dir\
+  TARGET_PDB = Dx11Tutorials\engines\Dx11Geo1.pdb
+
+build Dx11Tutorials\engines\CMakeFiles\Dx11Geo1.dir\__\includes\GeometyGenerator.cpp.obj: CXX_COMPILER__Dx11Geo1_Debug C$:\Users\parksangwo\Desktop\Github\DirectX-11-Tutorial\Dx11Tutorials\Dx11Tutorials\includes\GeometyGenerator.cpp || cmake_object_order_depends_target_Dx11Geo1
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -IC:\Users\parksangwo\Desktop\Github\DirectX-11-Tutorial\Dx11Tutorials\DxInclude
+  OBJECT_DIR = Dx11Tutorials\engines\CMakeFiles\Dx11Geo1.dir
+  OBJECT_FILE_DIR = Dx11Tutorials\engines\CMakeFiles\Dx11Geo1.dir\__\includes
+  TARGET_COMPILE_PDB = Dx11Tutorials\engines\CMakeFiles\Dx11Geo1.dir\
+  TARGET_PDB = Dx11Tutorials\engines\Dx11Geo1.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target Dx11Geo1
+
+
+#############################################
+# Link the executable Dx11Tutorials\engines\Dx11Geo1.exe
+
+build Dx11Tutorials\engines\Dx11Geo1.exe: CXX_EXECUTABLE_LINKER__Dx11Geo1_Debug Dx11Tutorials\engines\CMakeFiles\Dx11Geo1.dir\main_Dx11Geo1.cpp.obj Dx11Tutorials\engines\CMakeFiles\Dx11Geo1.dir\__\includes\ZekrosEngine.cpp.obj Dx11Tutorials\engines\CMakeFiles\Dx11Geo1.dir\__\includes\Windows.cpp.obj Dx11Tutorials\engines\CMakeFiles\Dx11Geo1.dir\__\includes\GameTimer.cpp.obj Dx11Tutorials\engines\CMakeFiles\Dx11Geo1.dir\__\includes\GeometyGenerator.cpp.obj | ..\..\..\Lib\x64\d3d11.lib ..\..\..\Lib\x64\d3dx11.lib ..\..\..\Lib\x64\Effects11d.lib ..\..\..\Lib\x64\dxgi.lib
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
+  LINK_LIBRARIES = ..\..\..\Lib\x64\d3d11.lib  ..\..\..\Lib\x64\d3dx11.lib  ..\..\..\Lib\x64\Effects11d.lib  ..\..\..\Lib\x64\dxgi.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  OBJECT_DIR = Dx11Tutorials\engines\CMakeFiles\Dx11Geo1.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = Dx11Tutorials\engines\CMakeFiles\Dx11Geo1.dir\
+  TARGET_FILE = Dx11Tutorials\engines\Dx11Geo1.exe
+  TARGET_IMPLIB = Dx11Tutorials\engines\Dx11Geo1.lib
+  TARGET_PDB = Dx11Tutorials\engines\Dx11Geo1.pdb
+
 
 #############################################
 # Utility command for edit_cache
@@ -264,6 +333,10 @@ build Dx11Draw: phony Dx11Tutorials\engines\Dx11Draw.exe
 
 build Dx11Draw.exe: phony Dx11Tutorials\engines\Dx11Draw.exe
 
+build Dx11Geo1: phony Dx11Tutorials\engines\Dx11Geo1.exe
+
+build Dx11Geo1.exe: phony Dx11Tutorials\engines\Dx11Geo1.exe
+
 build Dx11Init: phony Dx11Tutorials\engines\Dx11Init.exe
 
 build Dx11Init.exe: phony Dx11Tutorials\engines\Dx11Init.exe
@@ -290,7 +363,7 @@ build Dx11Tutorials\all: phony Dx11Tutorials\engines\all
 #############################################
 # Folder: C:/Users/parksangwo/Desktop/Github/DirectX-11-Tutorial/Dx11Tutorials/out/build/x64-debug/Dx11Tutorials/engines
 
-build Dx11Tutorials\engines\all: phony Dx11Tutorials\engines\Dx11Init.exe Dx11Tutorials\engines\Dx11Draw.exe
+build Dx11Tutorials\engines\all: phony Dx11Tutorials\engines\Dx11Init.exe Dx11Tutorials\engines\Dx11Draw.exe Dx11Tutorials\engines\Dx11Geo1.exe
 
 # =============================================================================
 # Built-in targets

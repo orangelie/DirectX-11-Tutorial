@@ -202,6 +202,15 @@ Dx11Draw_IS_TOP_LEVEL:STATIC=OFF
 Dx11Draw_SOURCE_DIR:STATIC=C:/Users/parksangwo/Desktop/Github/DirectX-11-Tutorial/Dx11Tutorials/Dx11Tutorials
 
 //Value Computed by CMake
+Dx11Geo1_BINARY_DIR:STATIC=C:/Users/parksangwo/Desktop/Github/DirectX-11-Tutorial/Dx11Tutorials/out/build/x64-debug/Dx11Tutorials
+
+//Value Computed by CMake
+Dx11Geo1_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+Dx11Geo1_SOURCE_DIR:STATIC=C:/Users/parksangwo/Desktop/Github/DirectX-11-Tutorial/Dx11Tutorials/Dx11Tutorials
+
+//Value Computed by CMake
 Dx11Init_BINARY_DIR:STATIC=C:/Users/parksangwo/Desktop/Github/DirectX-11-Tutorial/Dx11Tutorials/out/build/x64-debug/Dx11Tutorials
 
 //Value Computed by CMake

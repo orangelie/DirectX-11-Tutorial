@@ -12,3 +12,11 @@ target_link_libraries(Dx11Draw ${CMAKE_SOURCE_DIR}/Lib/x64/d3d11.lib)
 target_link_libraries(Dx11Draw ${CMAKE_SOURCE_DIR}/Lib/x64/d3dx11.lib)
 target_link_libraries(Dx11Draw ${CMAKE_SOURCE_DIR}/Lib/x64/Effects11d.lib)
 target_link_libraries(Dx11Draw ${CMAKE_SOURCE_DIR}/Lib/x64/dxgi.lib)
+
+
+
+add_executable (Dx11Geo1  "Dx11Geo1.h" "main_Dx11Geo1.cpp" ${Dx11Draw_Includes})
+target_link_libraries(Dx11Geo1 ${CMAKE_SOURCE_DIR}/Lib/x64/d3d11.lib)
+target_link_libraries(Dx11Geo1 ${CMAKE_SOURCE_DIR}/Lib/x64/d3dx11.lib)
+target_link_libraries(Dx11Geo1 ${CMAKE_SOURCE_DIR}/Lib/x64/Effects11d.lib)
+target_link_libraries(Dx11Geo1 ${CMAKE_SOURCE_DIR}/Lib/x64/dxgi.lib)
