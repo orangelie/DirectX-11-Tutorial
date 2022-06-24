@@ -18,71 +18,61 @@ namespace Colorsx {
 
 class Dx11Geo1 : public orangelie::Engine::ZekrosEngine {
 private:
-	void BuildBoxGeometry() {
-		Vertex vertices[] =
-		{
-			{ XMFLOAT3(-1.0f, -1.0f, -1.0f), Colorsx::Aqua },
-			{ XMFLOAT3(-1.0f, +1.0f, -1.0f), Colorsx::White   },
-			{ XMFLOAT3(+1.0f, +1.0f, -1.0f), Colorsx::Honeydew     },
-			{ XMFLOAT3(+1.0f, -1.0f, -1.0f), Colorsx::Green   },
-			{ XMFLOAT3(-1.0f, -1.0f, +1.0f), Colorsx::Blue    },
-			{ XMFLOAT3(-1.0f, +1.0f, +1.0f), Colorsx::Yellow  },
-			{ XMFLOAT3(+1.0f, +1.0f, +1.0f), Colorsx::DarkOrange    },
-			{ XMFLOAT3(+1.0f, -1.0f, +1.0f), Colorsx::Yellow }
+	void BuildGeometyBuffers() {
+		orangelie::Mesh::GeometryGenerator::MeshData box;
+
+
+		orangelie::Mesh::GeometryGenerator geoGen;
+		geoGen.CreateBox(1.0f, 1.0f, 1.0f, box);
+
+		XMFLOAT4 Colors[] = {
+			Colorsx::Aqua,
+			Colorsx::Blue,
+			Colorsx::Green,
+			Colorsx::Honeydew,
+			Colorsx::White,
+			Colorsx::Yellow,
+			Colorsx::DarkOrange,
+			Colorsx::Coral
 		};
 
-		UINT indices[] = {
-			// front face
-			0, 1, 2,
-			0, 2, 3,
+		std::vector<Vertex> vertices(box.Vertices.size());
+		for (size_t i = 0; i < box.Vertices.size(); ++i) {
+			vertices[i].Position = box.Vertices[i].Position;
+			vertices[i].Color = Colors[i % 8];
+		}
 
-			// back face
-			4, 6, 5,
-			4, 7, 6,
-
-			// left face
-			4, 5, 1,
-			4, 1, 0,
-
-			// right face
-			3, 2, 6,
-			3, 6, 7,
-
-			// top face
-			1, 5, 6,
-			1, 6, 2,
-
-			// bottom face
-			4, 0, 3,
-			4, 3, 7
-		};
+		std::vector<UINT> indices = box.Indices;
 
 		D3D11_BUFFER_DESC verticesDesc = {};
 		verticesDesc.BindFlags = D3D11_BIND_VERTEX_BUFFER;
-		verticesDesc.ByteWidth = 8 * sizeof(Vertex);
-		verticesDesc.CPUAccessFlags = 0;
+		verticesDesc.ByteWidth = vertices.size() * sizeof(Vertex);
+		verticesDesc.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
 		verticesDesc.MiscFlags = 0;
 		verticesDesc.StructureByteStride = 0;
-		verticesDesc.Usage = D3D11_USAGE_DEFAULT;
+		verticesDesc.Usage = D3D11_USAGE_DYNAMIC;
 
 		D3D11_SUBRESOURCE_DATA verticesSubResourcesDesc = {};
-		verticesSubResourcesDesc.pSysMem = vertices;
+		verticesSubResourcesDesc.pSysMem = vertices.data();
 
 		HR(m_Device->CreateBuffer(&verticesDesc, &verticesSubResourcesDesc, m_VertexBuffer.GetAddressOf()));
 
 
 		D3D11_BUFFER_DESC indicesDesc = {};
 		indicesDesc.BindFlags = D3D11_BIND_VERTEX_BUFFER;
-		indicesDesc.ByteWidth = 8 * sizeof(Vertex);
+		indicesDesc.ByteWidth = indices.size() * sizeof(UINT);
 		indicesDesc.CPUAccessFlags = 0;
 		indicesDesc.MiscFlags = 0;
 		indicesDesc.StructureByteStride = 0;
 		indicesDesc.Usage = D3D11_USAGE_DEFAULT;
 
 		D3D11_SUBRESOURCE_DATA indicesSubResourcesDesc = {};
-		indicesSubResourcesDesc.pSysMem = indices;
+		indicesSubResourcesDesc.pSysMem = indices.data();
 
 		HR(m_Device->CreateBuffer(&indicesDesc, &indicesSubResourcesDesc, m_IndexBuffer.GetAddressOf()));
+
+		m_BoxIndexCount = indices.size();
+		m_BoxVertexOffset = m_BoxIndexOffset = 0;
 	}
 
 	void BuildFX() {
@@ -122,7 +112,10 @@ private:
 		//HR(D3DX11CreateEffectFromFile(L"FX/shader.fxo", 0, m_Device.Get(), m_FX.GetAddressOf());
 
 		m_Tech = m_FX->GetTechniqueByName("ColorTech");
+
 		m_gWorldViewProj = m_FX->GetVariableByName("gWorldViewProj")->AsMatrix();
+		m_gDeltaTime = m_FX->GetVariableByName("gDeltaTime")->AsScalar();
+		m_gTotalTime = m_FX->GetVariableByName("gTotalTime")->AsScalar();
 	}
 
 	void BuildShaderAndInputLayout() {
@@ -144,14 +137,21 @@ private:
 protected:
 	// Virtuals
 	virtual void init() {
-		BuildBoxGeometry();
+		BuildGeometyBuffers();
 		BuildFX();
 		BuildShaderAndInputLayout();
 
 		XMStoreFloat4x4(&m_World, XMMatrixIdentity());
+
+		auto scale = XMMatrixScaling(2.0f, 1.0f, 2.0f);
+		auto offset = XMMatrixTranslation(0.0f, 0.5f, 0.0f);
+		XMStoreFloat4x4(&m_World, XMMatrixMultiply(XMLoadFloat4x4(&m_World), XMMatrixMultiply(scale, offset)));
 	}
 
 	virtual void update(float dt) {
+		static float t = 0.0f;
+		t += dt;
+
 		float x = m_Radius * sinf(m_Phi) * cosf(m_Theta);
 		float y = m_Radius * cosf(m_Phi);
 		float z = m_Radius * sinf(m_Phi) * sinf(m_Theta);
@@ -162,6 +162,9 @@ protected:
 
 		XMMATRIX V = XMMatrixLookAtLH(pos, target, up);
 		XMStoreFloat4x4(&m_View, V);
+
+		m_gDeltaTime->SetFloat(dt);
+		m_gTotalTime->SetFloat(t);
 	}
 
 	virtual void draw(float dt) {
@@ -179,7 +182,7 @@ protected:
 
 		m_ImmediateContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 		m_ImmediateContext->IASetVertexBuffers(0, 1, m_VertexBuffer.GetAddressOf(), &stride, &offset);
-		m_ImmediateContext->IASetIndexBuffer(m_IndexBuffer.Get(), DXGI_FORMAT_R32_UINT, offset);
+		m_ImmediateContext->IASetIndexBuffer(m_IndexBuffer.Get(), DXGI_FORMAT_R32_UINT, 0);
 		m_ImmediateContext->IASetInputLayout(m_InputLayout.Get());
 
 		XMMATRIX W = XMLoadFloat4x4(&m_World);
@@ -194,7 +197,7 @@ protected:
 
 		for (uint32_t i = 0; i < techniqueDesc.Passes; i++) {
 			m_Tech->GetPassByIndex(i)->Apply(0, m_ImmediateContext.Get());
-			m_ImmediateContext->DrawIndexed(36, 0, 0);
+			m_ImmediateContext->DrawIndexed(m_BoxIndexCount, m_BoxIndexOffset, m_BoxVertexOffset);
 		}
 
 
@@ -255,6 +258,8 @@ private:
 	ComPtr<ID3D11Buffer> m_IndexBuffer = nullptr;
 
 	ID3DX11EffectMatrixVariable* m_gWorldViewProj = nullptr;
+	ID3DX11EffectScalarVariable* m_gDeltaTime = nullptr;
+	ID3DX11EffectScalarVariable* m_gTotalTime = nullptr;
 
 	XMFLOAT4X4 m_World, m_View, m_Projection;
 
@@ -262,5 +267,7 @@ private:
 	float m_Phi = 0.25f;
 	float m_Theta = 0.1f;
 	float m_Radius = 5.0f;
+
+	UINT m_BoxIndexCount, m_BoxVertexOffset, m_BoxIndexOffset;
 
 };
