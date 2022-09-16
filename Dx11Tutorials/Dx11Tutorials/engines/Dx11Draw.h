@@ -1,4 +1,5 @@
-﻿#include "../includes/ZekrosEngine.h"
+﻿#pragma once
+#include "../includes/ZekrosEngine.h"
 
 struct Vertex {
 	XMFLOAT3 Position;

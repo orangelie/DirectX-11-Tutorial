@@ -24,9 +24,6 @@
 #include <DirectXCollision.h>
 #include <DirectXColors.h>
 
-//#include <d3d10_1.h>
-//#include <D3DX10.h>
-//#include <d3d11.h>
 #include <d3dx11effect.h>
 #include <D3DX11.h>
 

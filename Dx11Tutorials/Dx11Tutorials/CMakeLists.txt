@@ -9,6 +9,7 @@ set(Utils_Includes "../includes/DxUtils.h") # not mutable
 set(Dx11Init_Includes ${ZekrosEngine_Includes} ${Windows_Includes} ${GameTimer_Includes} ${Utils_Includes} ${GeometyGenerator_Includes})
 set(Dx11Draw_Includes ${ZekrosEngine_Includes} ${Windows_Includes} ${GameTimer_Includes} ${Utils_Includes} ${GeometyGenerator_Includes})
 set(Dx11Geo1_Includes ${ZekrosEngine_Includes} ${Windows_Includes} ${GameTimer_Includes} ${Utils_Includes} ${GeometyGenerator_Includes})
+set(Dx11Light_Includes ${ZekrosEngine_Includes} ${Windows_Includes} ${GameTimer_Includes} ${Utils_Includes} ${GeometyGenerator_Includes})
 
 add_subdirectory ("engines") # not mutable
 
@@ -21,3 +22,6 @@ target_include_directories(Dx11Draw PUBLIC "${CMAKE_SOURCE_DIR}/DxInclude")
 
 project("Dx11Geo1")
 target_include_directories(Dx11Geo1 PUBLIC "${CMAKE_SOURCE_DIR}/DxInclude")
+
+project("Dx11Light")
+target_include_directories(Dx11Light PUBLIC "${CMAKE_SOURCE_DIR}/DxInclude")

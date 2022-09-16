@@ -1,4 +1,5 @@
-﻿#include "../includes/ZekrosEngine.h"
+﻿#pragma once
+#include "../includes/ZekrosEngine.h"
 
 class Dx11Init : public orangelie::Engine::ZekrosEngine {
 protected:
